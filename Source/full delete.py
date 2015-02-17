@@ -24,13 +24,13 @@ try:
 
     with open(f, 'r') as fr:
         fl = len(fr.read())
-    fr.close()
+    # fr.close()  # close() is done automatically at the end the 'with open()' statement
 
     with open(f, 'w') as fw:
         for i in xrange(overwrites):
             writing = unichr(0) * (fl*upscale)
             fw.write(writing)
-    fw.close()
+    #fw.close()  # close() is done automatically at the end the 'with open()' statement
 
     os.remove(f)
 
